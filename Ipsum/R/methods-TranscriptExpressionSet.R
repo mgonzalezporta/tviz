@@ -28,7 +28,7 @@ setMethod("show",
     cat("     condition 2:", head(object@conditions$cond2, n=4), "(...)\n")
     cat("   Gene expression:", head(object@gexp, n=4), "(...)\n")
     cat("   Dominance:", head(object@dominance, n=4), "(...)\n")
-    cat("   Unique transcript biotypes:", names(table(tes@biotypes$tBiotype)), "\n")
+    cat("   Unique transcript biotypes:", names(table(object@biotypes$tBiotype)), "\n")
     cat("   Significant events:", object@significant_events, "\n")
   })
 
