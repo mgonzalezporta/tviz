@@ -4,6 +4,8 @@ library("Ipsum")
 # Test 1: small number of samples 
 #####################################
 
+setwd("./Ipsum/inst/tests/")
+
 ## arguments
 gId='ENSG00000124193'
 expdata='expdata1.txt' 
