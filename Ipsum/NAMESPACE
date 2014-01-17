@@ -1,0 +1,21 @@
+exportClasses( "TranscriptExpressionSet" )
+
+exportMethods(
+   id, "id<-",
+   conditions,
+   rpkms,
+   gexp,
+   dominance,
+   biotypes,
+   significant_events,
+   plotStars,
+   plotDistr
+)
+
+export(
+   readExpressionData,
+   readBiotypeData,
+   readSignificantEvents,
+   newTranscriptExpressionSet,
+   getOutfile
+)
