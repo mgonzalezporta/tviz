@@ -61,27 +61,6 @@ newTranscriptExpressionSet=function(gId=gId, rpkms=rpkms, biotypes=biotypes, con
   return(tes)
 }
 
-getOutfile=function(outdir=outdir, plot_type=plot_type, gId=gId) {
-  # create plots directory
-  outdir_plots=paste(outdir, "/data/plots", sep="")
-  dir.create(outdir_plots, showWarnings = FALSE)
-
-  # create plot type directory
-  outdir_plots_type=paste(outdir_plots, plot_type, sep="/")
-  dir.create(outdir_plots_type, showWarnings = FALSE)
-
-  # create gId subdirectory
-  s=unlist(strsplit(gId, ''))
-  id=paste(s[c(1:(length(s)-3))], collapse='')
-  outdir_plots_type_id=paste(outdir_plots_type, id, sep="/")
-  dir.create(outdir_plots_type_id, showWarnings = FALSE)
-  
-  # outfile
-  outfile=paste(outdir_plots_type_id, "/", gId, ".pdf", sep="")
-
-  return(outfile)
-}
-
 ## internal functions
 .format_cond=function(cond) {
   x=as.numeric(strsplit(cond, "-")[[1]])

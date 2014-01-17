@@ -16,6 +16,5 @@ export(
    readExpressionData,
    readBiotypeData,
    readSignificantEvents,
-   newTranscriptExpressionSet,
-   getOutfile
+   newTranscriptExpressionSet
 )

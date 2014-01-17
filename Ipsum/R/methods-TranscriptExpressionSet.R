@@ -147,7 +147,7 @@ setMethod(".annotate_data",
     biotypes$tId=as.character(biotypes$tId)
     se=biotypes$tId %in% significant_events
     if (sum(se) > 0) {
-	biotypes[se,]$tId=paste(biotypes[se,]$tId, "**", sep=" ")
+      biotypes[se,]$tId=paste(biotypes[se,]$tId, "**", sep=" ")
     }
 
     rn=paste(biotypes$tBiotype, " - ", biotypes$tId, sep="")
@@ -228,10 +228,10 @@ setMethod(".plot_boxplots",
       for(i in 1:nOfT){
         plot_count=plot_count+1
 
-	xlab=gsub(" - ", "\n", rownames(data)[i])
-	if (sum("NA" %in% significant_events) == 0) {
-		xlab=.expand_xlab(xlab)
-	}
+      	xlab=gsub(" - ", "\n", rownames(data)[i])
+        if (! identical(significant_events, "NA")) {
+                xlab=.expand_xlab(xlab)
+        }
 
         .subplot_boxplots(
           ldata=list(data[i, tes@conditions$cond1], data[i, tes@conditions$cond2]),
@@ -356,7 +356,7 @@ setMethod(".plot_segments",
         plot_count=plot_count+1
         
         xlab=gsub(" - ", "\n", rownames(data)[i])
-        if (sum("NA" %in% significant_events) == 0) {
+        if (! identical(significant_events, "NA")) {
                 xlab=.expand_xlab(xlab)
         }
 
@@ -529,8 +529,8 @@ setMethod(".get_transcript_colors", "TranscriptExpressionSet",
 
 setMethod(".expand_xlab", "character",
     function(object) {
-	x=object
+	      x=object
         xlab=gsub(" **", "\n**", x, fixed=T)
 
-	return(xlab)
+	       return(xlab)
     })
