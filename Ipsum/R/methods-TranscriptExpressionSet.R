@@ -33,13 +33,13 @@ setMethod("show",
   })
 
 setMethod("id", "TranscriptExpressionSet", function(object) object@id)
-setReplaceMethod("id",
-                 signature(object="TranscriptExpressionSet",
-                           value="character"),
-                 function(object, value) {
-                   object@id=value
-                   return(object)
-                 })
+# setReplaceMethod("id",
+#                  signature(object="TranscriptExpressionSet",
+#                            value="character"),
+#                  function(object, value) {
+#                    object@id=value
+#                    return(object)
+#                  })
 
 setMethod("conditions", "TranscriptExpressionSet", 
   function(object) object@conditions)

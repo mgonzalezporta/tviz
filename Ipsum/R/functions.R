@@ -40,7 +40,7 @@ readSignificantEvents=function(gId=gId, infile=infile) {
   return(significant_events)
 }
 
-newTranscriptExpressionSet=function(gId=gId, rpkms=rpkms, biotypes=biotypes, cond1=cond1, cond2=cond2, significant_events=significant_events) {
+newTranscriptExpressionSet=function(gId=gId, rpkms=rpkms, biotypes=biotypes, significant_events=significant_events, cond1=cond1, cond2=cond2) {
   # conditions
   cond1=.format_cond(cond1)
   cond2=.format_cond(cond2)

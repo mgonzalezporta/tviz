@@ -1,12 +1,13 @@
 \name{Ipsum-package}
+\encoding{UTF-8}
 \alias{Ipsum-package}
 \alias{Ipsum}
 \docType{package}
 \title{
-	Ipsum: visualisation of changes in splicing in RNA-seq experiments
+	Ipsum: visualisation of gene and transcript expression levels from RNA-seq experiments
 }
 \description{
-	1-5 lines of description + link to github
+	Plot gene and transcript expression levels estimated from RNA-seq experiments using both sample-specific and summarised approaches.
 }
 \details{
 	\tabular{ll}{
@@ -14,12 +15,12 @@
 		Type: \tab Package\cr
 		Version: \tab 1.0\cr
 		Date: \tab 2014-01-17\cr
-		License: \tab update\cr
+		License: \tab GPLv2\cr
 	}
 }
 \author{
-	Author: Mar Gonzalez-Porta <mar@ebi.ac.uk>
+	Author: Mar Gonàlez-Porta <mar@ebi.ac.uk>
 }
-\references{}
-\keyword{ plot RNA-seq splicing }
+\references{https://github.com/mgonzalezporta/ipsum}
+\keyword{ plot RNA-seq expression splicing }
 \examples{}

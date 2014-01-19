@@ -2,8 +2,8 @@
 setGeneric("id", 
 	function(object) standardGeneric("id"))
 
-setGeneric("id<-", 
-	function(object,value) standardGeneric("id<-"))
+# setGeneric("id<-", 
+# 	function(object,value) standardGeneric("id<-"))
 
 setGeneric("conditions", 
 	function(object) standardGeneric("conditions"))
