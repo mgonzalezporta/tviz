@@ -23,7 +23,7 @@ readExpressionData(gId=gId, infile=infile, cond1=cond1, cond2=cond2)
   that belong to the second condition. E.g: '7-10'.}
 }
 \author{
-   Mar Gonzàlez-Porta, mar@ebi.ac.uk
+   Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }
 \examples{
 }

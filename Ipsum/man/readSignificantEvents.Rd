@@ -18,7 +18,7 @@ readSignificantEvents(gId=gId, infile=infile)
   \item{infile}{Path to the file that contains the differential usage data.}
 }
 \author{
-   Mar Gonzàlez-Porta, mar@ebi.ac.uk
+   Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }
 \examples{
 }

@@ -27,6 +27,10 @@
 Objects should be created with calls to \code{\link{newTranscriptExpressionSet}}.
 }
 
+\author{
+   Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
+}
+
 \examples{
 }
 

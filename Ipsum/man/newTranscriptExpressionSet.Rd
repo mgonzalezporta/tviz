@@ -31,5 +31,5 @@ newTranscriptExpressionSet(
 A TranscriptExpressionSet object.
 }
 \author{
-   Mar Gonzàlez-Porta, mar@ebi.ac.uk
+   Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }

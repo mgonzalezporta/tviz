@@ -23,7 +23,7 @@
 }
 
 \author{
-   Mar Gonzàlez-Porta, mar@ebi.ac.uk
+   Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }
 \examples{
 }   

@@ -18,7 +18,7 @@ readBiotypeData(gId=gId, infile=infile)
   \item{infile}{Path to the file that contains the biotype data.}
 }
 \author{
-   Mar Gonzàlez-Porta, mar@ebi.ac.uk
+   Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }
 \examples{
 }

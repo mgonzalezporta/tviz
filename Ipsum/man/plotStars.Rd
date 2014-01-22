@@ -18,5 +18,5 @@ In this plot each sample is represented as a pie chart, where each of the slices
   \item{outfile}{ouput file (pdf).}
 }
 \author{
-  Mar Gonzàlez-Porta, mar@ebi.ac.uk
+  Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }

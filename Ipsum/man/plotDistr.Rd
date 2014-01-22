@@ -25,5 +25,5 @@ Depending on the number of samples, the information in each panel will be displa
   \item{outfile}{ouput file (pdf).}
 }
 \author{
-  Mar Gonzàlez-Porta, mar@ebi.ac.uk
+  Mar Gonzàlez-Porta, <mar@ebi.ac.uk>
 }
