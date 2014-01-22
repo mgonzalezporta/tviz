@@ -19,7 +19,7 @@
 	}
 }
 \author{
-	Author: Mar Gonàlez-Porta <mar@ebi.ac.uk>
+	Author: Mar Gonzàlez-Porta <mar@ebi.ac.uk>
 }
 \references{https://github.com/mgonzalezporta/ipsum}
 \keyword{ plot RNA-seq expression splicing }
