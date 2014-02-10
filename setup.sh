@@ -1,8 +1,8 @@
 #!/bin/bash
 
-R CMD build Ipsum
-R CMD check Ipsum_1.0.tar.gz
-R CMD INSTALL Ipsum_1.0.tar.gz
+R CMD build tviz
+R CMD check tviz_1.0.tar.gz
+R CMD INSTALL tviz_1.0.tar.gz
 
-rm Ipsum_1.0.tar.gz
-cp Ipsum.Rcheck/Ipsum-manual.pdf .
+rm tviz_1.0.tar.gz
+cp tviz.Rcheck/tviz-manual.pdf .

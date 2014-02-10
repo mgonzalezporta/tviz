@@ -1,3 +1,3 @@
 #!/bin/bash
 
-R --no-save < ./Ipsum/inst/tests/test-ipsum.R
+R --no-save < ./tviz/inst/tests/test-tviz.R

@@ -1,4 +1,4 @@
-Package: Ipsum
+Package: tviz
 Type: Package
 Title: Visualisation of gene and transcript expression levels from RNA-seq experiments
 Version: 1.0

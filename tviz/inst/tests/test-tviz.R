@@ -1,10 +1,10 @@
-library("Ipsum")
+library("tviz")
 
 #####################################
 # Test 1: small number of samples 
 #####################################
 
-setwd("./Ipsum/inst/tests/")
+setwd("./tviz/inst/tests/")
 
 ## arguments
 gId='ENSG00000124193'
