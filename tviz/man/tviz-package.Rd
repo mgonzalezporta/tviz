@@ -1,17 +1,17 @@
-\name{Ipsum-package}
+\name{tviz-package}
 \encoding{UTF-8}
-\alias{Ipsum-package}
-\alias{Ipsum}
+\alias{tviz-package}
+\alias{tviz}
 \docType{package}
 \title{
-	Ipsum: visualisation of gene and transcript expression levels from RNA-seq experiments
+	tviz: visualisation of gene and transcript expression levels from RNA-seq experiments
 }
 \description{
-	Plot gene and transcript expression levels estimated from RNA-seq experiments using both sample-specific and summarised approaches.
+	Plots gene and transcript expression levels estimated from RNA-seq experiments using both sample-specific and summarised approaches.
 }
 \details{
 	\tabular{ll}{
-		Package: \tab Ipsum\cr
+		Package: \tab tviz\cr
 		Type: \tab Package\cr
 		Version: \tab 1.0\cr
 		Date: \tab 2014-01-17\cr
@@ -21,6 +21,6 @@
 \author{
 	Author: Mar Gonzàlez-Porta <mar@ebi.ac.uk>
 }
-\references{https://github.com/mgonzalezporta/ipsum}
+\references{https://github.com/mgonzalezporta/tviz}
 \keyword{ plot RNA-seq expression splicing }
 \examples{}

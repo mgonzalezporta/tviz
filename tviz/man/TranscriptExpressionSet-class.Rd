@@ -15,7 +15,7 @@
   loaded using the 'readExpressionData' function.}
   \item{biotypes}{Matrix of biotypes for each of the annotated transcripts within the gene, 
   loaded using the 'readBiotypeData' function.}
-  \item{significant_events}{List of transcript ids that undergo differential usage across the studied conditions, loaded using the 'readSignificantEvents' function. Should be set to 'NA' in case such information is not available.}
+  \item{significant_events}{List of transcript ids that undergo differential usage across the studied conditions, loaded using the 'readSignificantEvents' function. Must be set to 'NA' in case such information is not available.}
   \item{cond1}{String indicating the range of columns (samples) 
   that belong to the first condition. E.g: '3-6'.}
   \item{cond1}{String indicating the range of columns (samples) 

@@ -10,9 +10,7 @@
 
 \description{
    The significant_events slot holds a list of transcript ids reported by the user 
-   as differentially used across the studied conditions. 
-   In the case that such information is not available, 
-   'NA' will be assigned.
+   as differentially used across the studied conditions.
 }
 
 \usage{

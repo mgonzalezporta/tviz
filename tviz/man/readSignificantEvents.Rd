@@ -8,7 +8,7 @@
    For a given gene, load a list of transcripts that undergo differential usage across conditions.
 }
 \description{
-   For a given gene, load a list of transcripts that undergo differential usage across conditions.
+   Loads a list of transcripts that undergo differential usage across conditions for the specified gene.
 }
 \usage{
 readSignificantEvents(gId=gId, infile=infile)

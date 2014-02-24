@@ -5,10 +5,10 @@
 \alias{readExpressionData}
 
 \title{
-   Create a matrix of RPKM/FPKM transcript expression levels for a given gene from a system file.
+   Create a matrix of RPKM/FPKM transcript expression levels for a given gene from the specified input file.
 }
 \description{
-   Loads transcript expression data (RPKM/FPKM values) for a given gene from a system file. 
+   Loads transcript expression data (RPKM/FPKM values) for a given gene from the specified input file. 
    Each sample is represented as a column, and each transcript as a row.
 }
 \usage{

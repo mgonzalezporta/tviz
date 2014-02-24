@@ -10,7 +10,8 @@
 
 \description{
    The conditions slot contains information on the experimental conditions evaluated,
-   as well as the list of samples corresponding to each one of them.
+   as well as the list of samples corresponding to each one of them. This slot is automatically created
+   from the header of the input file.
 }
 
 \usage{
