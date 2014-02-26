@@ -6,7 +6,7 @@
 \title{Create a starplot for the specified TranscriptExpressionSet object.}
 
 \description{
-A starplot provides information on the transcript RPKM quantifications in a sample specific manner.
+A starplot provides information on the transcript quantifications in a sample specific manner.
 In this plot each sample is represented as a pie chart, where each of the slices corresponds to a transcript. The size of each slice is proportional to the transcript expression level, and the overall size of the plot is proportional to the gene expression level, thus allowing comparisons across samples.
 }
 

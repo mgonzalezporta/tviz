@@ -8,7 +8,7 @@
 \description{
 A distribution plot contains information on the distribution of gene expression levels, major transcript dominance and transcript relative abundances in each condition. This plot contains three panels:
 
-left - Distribution of gene expression levels (RPKMs or FPKMs).
+left - Distribution of gene expression levels.
 
 middle - Distribution of major transcript dominance. Major transcript dominance is calculated in each condition as the ratio of expression of the second v.s. first most abundant transcripts. Thus, a ratio close to 0 will indicate that the most abundant transcript is dominating the expression for that gene, while a ratio close to 1 indicates that the first and second most abundant transcripts are expressed at the same level.
 

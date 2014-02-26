@@ -11,7 +11,7 @@
 \section{Slots}{
   \describe{
   \item{gId}{Id for the gene to be plotted.}
-  \item{rpkms}{Matrix of transcript RPKM/FPKM values in each sample, 
+  \item{texp}{Matrix of transcript expression values in each sample, 
   loaded using the 'readExpressionData' function.}
   \item{biotypes}{Matrix of biotypes for each of the annotated transcripts within the gene, 
   loaded using the 'readBiotypeData' function.}

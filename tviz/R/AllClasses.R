@@ -1,7 +1,7 @@
 setClass("TranscriptExpressionSet",
   representation = representation(
     id="character",
-    rpkms="matrix",
+    texp="matrix",
     conditions="list",
     gexp="numeric",
     dominance="numeric",

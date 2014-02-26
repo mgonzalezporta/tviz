@@ -19,7 +19,7 @@ outdir='./output-test'
 dir.create(outdir, showWarnings = FALSE)
 
 ## load data
-rpkms=readExpressionData(gId=gId, infile=expdata, cond1=cond1, cond2=cond2)
+texp=readExpressionData(gId=gId, infile=expdata, cond1=cond1, cond2=cond2)
 biotypes=readBiotypeData(gId=gId, infile=annot)
 if (filt != "NA") {
 	significant_events=readSignificantEvents(gId=gId, infile=filt)
@@ -30,7 +30,7 @@ if (filt != "NA") {
 ## create TranscriptExpressionSet object
 tes=newTranscriptExpressionSet(
         gId=gId,
-        rpkms=rpkms,
+        texp=texp,
         biotypes=biotypes,
         cond1=cond1,
         cond2=cond2,
@@ -61,7 +61,7 @@ outdir='./output-test'
 dir.create(outdir, showWarnings = FALSE)
 
 ## load data
-rpkms=readExpressionData(gId=gId, infile=expdata, cond1=cond1, cond2=cond2)
+texp=readExpressionData(gId=gId, infile=expdata, cond1=cond1, cond2=cond2)
 biotypes=readBiotypeData(gId=gId, infile=annot)
 if (filt != "NA") {
 	significant_events=readSignificantEvents(gId=gId, infile=filt)
@@ -72,7 +72,7 @@ if (filt != "NA") {
 ## create TranscriptExpressionSet object
 tes=newTranscriptExpressionSet(
         gId=gId,
-        rpkms=rpkms,
+        texp=texp,
         biotypes=biotypes,
         cond1=cond1,
         cond2=cond2,

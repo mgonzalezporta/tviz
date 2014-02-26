@@ -8,8 +8,8 @@ setGeneric("id",
 setGeneric("conditions", 
 	function(object) standardGeneric("conditions"))
 
-setGeneric("rpkms", 
-	function(object) standardGeneric("rpkms"))
+setGeneric("texp", 
+	function(object) standardGeneric("texp"))
 
 setGeneric("gexp", 
 	function(object) standardGeneric("gexp"))

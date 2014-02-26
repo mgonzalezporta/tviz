@@ -1,10 +1,10 @@
 ## initialize
 setMethod("initialize", "TranscriptExpressionSet",
-  function(.Object, id=id, rpkms=rpkms, biotypes=biotypes, conditions=conditions, significant_events=significant_events){
+  function(.Object, id=id, texp=texp, biotypes=biotypes, conditions=conditions, significant_events=significant_events){
     .Object@id=id
-    .Object@rpkms=rpkms
+    .Object@texp=texp
     .Object@conditions=conditions
-    .Object@gexp=colSums(.Object@rpkms)
+    .Object@gexp=colSums(.Object@texp)
     .Object@dominance=.calculate_dominance(.Object)
     .Object@.relexp=.calculate_relexp(.Object)
     .Object@.scaledexp=.calculate_scaledexp(.Object)
@@ -20,9 +20,9 @@ setMethod("show",
   function(object) {
     cat("Object of class",class(object),"\n")
     cat("   Id:",id(object),"\n")
-    cat("   RPKMs: data frame with", dim(object@rpkms)[1], "transcripts and", dim(object@rpkms)[2], "samples\n")
-    cat("     transcripts:", head(rownames(object@rpkms), n=4), "(...)\n")
-    cat("     samples:", head(colnames(object@rpkms), n=4), "(...)\n")
+    cat("   Transcript expression: data frame with", dim(object@texp)[1], "transcripts and", dim(object@texp)[2], "samples\n")
+    cat("     transcripts:", head(rownames(object@texp), n=4), "(...)\n")
+    cat("     samples:", head(colnames(object@texp), n=4), "(...)\n")
     cat("   Conditions:\n")
     cat("     condition 1:", head(object@conditions$cond1, n=4), "(...)\n")
     cat("     condition 2:", head(object@conditions$cond2, n=4), "(...)\n")
@@ -44,8 +44,8 @@ setMethod("id", "TranscriptExpressionSet", function(object) object@id)
 setMethod("conditions", "TranscriptExpressionSet", 
   function(object) object@conditions)
 
-setMethod("rpkms", "TranscriptExpressionSet", 
-  function(object) object@rpkms)
+setMethod("texp", "TranscriptExpressionSet", 
+  function(object) object@texp)
 
 setMethod("gexp", "TranscriptExpressionSet", 
   function(object) object@gexp)
@@ -202,7 +202,7 @@ setMethod(".plot_boxplots",
       .subplot_boxplots(
         ldata=list(tes@gexp[tes@conditions$cond1], tes@gexp[tes@conditions$cond2]),
         xlab=tes@id, 
-        ylab="gene expression (RPKMs)", 
+        ylab="gene expression", 
         type="gexp", 
         mar=mar, 
         col=col, 
@@ -328,7 +328,7 @@ setMethod(".plot_segments",
         data1=tes@gexp[tes@conditions$cond1], 
         data2=tes@gexp[tes@conditions$cond2], 
         xlab=tes@id, 
-        ylab="gene expression (RPKMs)", 
+        ylab="gene expression", 
         type="gexp", 
         mar=mar, 
         col=col, 
@@ -446,7 +446,7 @@ setMethod(".get_legend_title_starplot", "TranscriptExpressionSet",
   function(object) {
     legend_title=paste(
       object@id, "\n\n",
-      "gene expression summary (RPKMs):\n", 
+      "gene expression summary:\n", 
       "   condition 1 (left) - ", .distr_summary(object@gexp[object@conditions$cond1]), "\n",
       "   condition 2 (right) - ", .distr_summary(object@gexp[object@conditions$cond2]), "\n\n",
       "dominance summary:\n",
@@ -459,13 +459,13 @@ setMethod(".get_legend_title_starplot", "TranscriptExpressionSet",
 
 setMethod(".calculate_dominance", "TranscriptExpressionSet",
     function(object) {
-          dominance=apply(object@rpkms, 2, .ratio_second)
+          dominance=apply(object@texp, 2, .ratio_second)
           return(dominance)
     })
 
 setMethod(".calculate_relexp", "TranscriptExpressionSet",
     function(object) {
-      relexp=t(t(object@rpkms)/object@gexp)
+      relexp=t(t(object@texp)/object@gexp)
       return(relexp)
     })
 

@@ -3,7 +3,7 @@ exportClasses( "TranscriptExpressionSet" )
 exportMethods(
    id,
    conditions,
-   rpkms,
+   texp,
    gexp,
    dominance,
    biotypes,

@@ -7,14 +7,14 @@ readExpressionData=function(gId=gId, infile=infile, cond1=cond1, cond2=cond2) {
   cond1=.format_cond(cond1)
   cond2=.format_cond(cond2)
 
-  # transcript RPKMs
+  # transcript expression levels
   command=paste("grep", gId, infile, sep=" ")
   data=read.table(pipe(command), col.names=header,
     colClasses=c("NULL", "character", rep("numeric", length(header)-2)))
-  rpkms=as.matrix(data[,c(cond1, cond2)])
-  rownames(rpkms)=data[,1]
+  texp=as.matrix(data[,c(cond1, cond2)])
+  rownames(texp)=data[,1]
 
-  return(rpkms)
+  return(texp)
 }
 
 readBiotypeData=function(gId=gId, infile=infile) {
@@ -40,20 +40,20 @@ readSignificantEvents=function(gId=gId, infile=infile) {
   return(significant_events)
 }
 
-newTranscriptExpressionSet=function(gId=gId, rpkms=rpkms, biotypes=biotypes, significant_events=significant_events, cond1=cond1, cond2=cond2) {
+newTranscriptExpressionSet=function(gId=gId, texp=texp, biotypes=biotypes, significant_events=significant_events, cond1=cond1, cond2=cond2) {
   # conditions
   cond1=.format_cond(cond1)
   cond2=.format_cond(cond2)
 
   cond1=cond1-1
-  cond2=seq(from=length(cond1)+1, to=dim(rpkms)[2], by=1)
+  cond2=seq(from=length(cond1)+1, to=dim(texp)[2], by=1)
   conditions=list(cond1=cond1, cond2=cond2)
 
   # create TranscriptExpressionSet object
   tes=new("TranscriptExpressionSet",
     id=gId,
     conditions=conditions,
-    rpkms=rpkms,
+    texp=texp,
     biotypes=biotypes,
     significant_events=significant_events
   )
