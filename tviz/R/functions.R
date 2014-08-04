@@ -1,19 +1,40 @@
 readExpressionData=function(gId=gId, infile=infile, cond1=cond1, cond2=cond2) {
   # header
   command=paste("head -n1", infile, sep=" ")
-  header=read.table(pipe(command), as.is=T)
-
-  # conditions
-  cond1=.format_cond(cond1)
-  cond2=.format_cond(cond2)
+  header=read.table(pipe(command), as.is=T, 
+        check.names=FALSE  # necessary to deal with technical replicates
+        )
 
   # transcript expression levels
   command=paste("grep", gId, infile, sep=" ")
-  data=read.table(pipe(command), col.names=header,
+  data=read.table(pipe(command), col.names=header, check.names=FALSE,
     colClasses=c("NULL", "character", rep("numeric", length(header)-2)))
-  texp=as.matrix(data[,c(cond1, cond2)])
-  rownames(texp)=data[,1]
+  
+  # take the median across technical replicates, if any
+  cond1=.format_cond(cond1)
+  cond2=.format_cond(cond2)
 
+  data_cond1=data[,cond1+1]
+  colnames(data_cond1)=colnames(data)[cond1+1]
+  new_data_cond1=.aggregate_technical_replicates(data_cond1)
+
+  data_cond2=data[,cond2+1]
+  colnames(data_cond2)=colnames(data)[cond2+1]
+  new_data_cond2=.aggregate_technical_replicates(data_cond2)
+
+  new_data=as.matrix(cbind(new_data_cond1, new_data_cond2))
+  rownames(new_data)=data[,1]
+
+  # recalculate condition intervals
+  cond1=1:dim(new_data_cond1)[2]
+  cond2=(dim(new_data_cond1)[2]+1):dim(new_data)[2]
+
+  # return result
+  texp=list(
+      texp=new_data,
+      cond1=cond1,
+      cond2=cond2
+    )
   return(texp)
 }
 
@@ -42,11 +63,6 @@ readSignificantEvents=function(gId=gId, infile=infile) {
 
 newTranscriptExpressionSet=function(gId=gId, texp=texp, biotypes=biotypes, significant_events=significant_events, cond1=cond1, cond2=cond2) {
   # conditions
-  cond1=.format_cond(cond1)
-  cond2=.format_cond(cond2)
-
-  cond1=cond1-1
-  cond2=seq(from=length(cond1)+1, to=dim(texp)[2], by=1)
   conditions=list(cond1=cond1, cond2=cond2)
 
   # create TranscriptExpressionSet object
@@ -64,6 +80,19 @@ newTranscriptExpressionSet=function(gId=gId, texp=texp, biotypes=biotypes, signi
 ## internal functions
 .format_cond=function(cond) {
   x=as.numeric(strsplit(cond, "-")[[1]])
-  cond=(x[1]-1):(x[2]-1)
+  cond=(x[1]-2):(x[2]-2)
   return(cond)
+}
+
+.aggregate_technical_replicates=function(data) {
+  new_colnames=unique(colnames(data))
+  new_data = data.frame(
+          matrix(vector(), length(rownames(data)), length(new_colnames)),
+          stringsAsFactors=F)
+  colnames(new_data)=new_colnames
+  for (replicate in new_colnames) {
+          median_exp=apply(data.frame(data[,colnames(data)==replicate]), 1, median)
+          new_data[,replicate]=median_exp
+  }
+  return(new_data)
 }
