@@ -10,6 +10,8 @@
 \description{
    Loads transcript expression data for a given gene from the specified input file. 
    Each sample is represented as a column, and each transcript as a row.
+   Columns with the same id will be treated as technical replicates. In this case, the median expression across all samples will be calculated for each transcript.
+   Columns with different ids within the same condition will be treated as biological replicates. Those will be represented separately.
 }
 \usage{
 readExpressionData(gId=gId, infile=infile, cond1=cond1, cond2=cond2)

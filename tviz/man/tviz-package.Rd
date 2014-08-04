@@ -13,7 +13,7 @@
 	\tabular{ll}{
 		Package: \tab tviz\cr
 		Type: \tab Package\cr
-		Version: \tab 1.0\cr
+		Version: \tab 0.99.0\cr
 		Date: \tab 2014-01-17\cr
 		License: \tab GPLv2\cr
 	}
