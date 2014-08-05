@@ -1,7 +1,7 @@
 \name{plotStars}
 \docType{methods}
 \alias{plotStars}
-\alias{plotStars,TranscriptExpressionSet-method}
+\alias{plotStars,TranscriptExpressionSet,character-method}
 \encoding{UTF-8}
 \title{Create a starplot for the specified TranscriptExpressionSet object.}
 
@@ -11,7 +11,7 @@ In this plot each sample is represented as a pie chart, where each of the slices
 }
 
 \usage{
-\S4method{plotStars}{TranscriptExpressionSet}(tes, outfile)
+\S4method{plotStars}{TranscriptExpressionSet,character}(tes, outfile)
 }
 \arguments{
   \item{tes}{a \code{TranscriptExpressionSet} object.}

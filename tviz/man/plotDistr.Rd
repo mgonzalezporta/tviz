@@ -1,7 +1,7 @@
 \name{plotDistr}
 \docType{methods}
 \alias{plotDistr}
-\alias{plotDistr,TranscriptExpressionSet-method}
+\alias{plotDistr,TranscriptExpressionSet,character-method}
 \encoding{UTF-8}
 \title{Create a distribution plot for the specified TranscriptExpressionSet object.}
 
@@ -18,7 +18,7 @@ Depending on the number of samples, the information in each panel will be displa
 }
 
 \usage{
-\S4method{plotDistr}{TranscriptExpressionSet}(tes, outfile)
+\S4method{plotDistr}{TranscriptExpressionSet,character}(tes, outfile)
 }
 \arguments{
   \item{tes}{a \code{TranscriptExpressionSet} object.}

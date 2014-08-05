@@ -1,9 +1,8 @@
-\name{TranscriptExpressionSet}
+\name{TranscriptExpressionSet-class}
 \Rdversion{1.1}
 \encoding{UTF-8}
 \docType{class}
-\alias{TranscriptExpressionSet}
-\alias{TranscriptExpressionSet,TranscriptExpressionSet-class}
+\alias{TranscriptExpressionSet-class}
 
 \title{Class "TranscriptExpressionSet" -- a container for transcript-level expression data from RNA-seq experiments}
 \description{This is the main class for the present package.}
