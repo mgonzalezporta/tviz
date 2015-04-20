@@ -14,11 +14,11 @@ readExpressionData=function(gId=gId, infile=infile, cond1=cond1, cond2=cond2) {
   cond1=.format_cond(cond1)
   cond2=.format_cond(cond2)
 
-  data_cond1=data[,cond1+1]
+  data_cond1=data.frame(data[,cond1+1])
   colnames(data_cond1)=colnames(data)[cond1+1]
   new_data_cond1=.aggregate_technical_replicates(data_cond1)
 
-  data_cond2=data[,cond2+1]
+  data_cond2=data.frame(data[,cond2+1])
   colnames(data_cond2)=colnames(data)[cond2+1]
   new_data_cond2=.aggregate_technical_replicates(data_cond2)
 
